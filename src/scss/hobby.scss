@@ -1,0 +1,95 @@
+@mixin bg-image($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hobby-item {
+  padding: 5px 0;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer;
+
+  .hobby-item__control {
+    @include bg-image('../img/add.gif');
+
+    display: none;
+    width: 12px;
+    height: 12px;
+    padding: 3px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+
+  .hobby-item__text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    min-width: 400px;
+    max-width: 100%;
+
+    .text {
+      margin-right: 10px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 30px;
+      width: 50px;
+      background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0.5));
+    }
+  }
+
+  &:hover {
+    .hobby-item__control {
+      display: inline-block;
+    }
+
+    .claim {
+      display: inline-block;
+    }
+  }
+
+  .claim {
+    display: none;
+    position: absolute;
+    right: 0;
+    vertical-align: middle;
+    padding-left: 20px;
+
+    &::before {
+      @include bg-image('../img/warn.png');
+
+      display: inline-block;
+      content: '';
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+
+  .added {
+    color: green;
+    vertical-align: middle;
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 50px;
+
+    &::before {
+      @include bg-image('../img/ok.png');
+
+      display: inline-block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}

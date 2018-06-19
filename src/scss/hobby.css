@@ -1,0 +1,69 @@
+.hobby-item {
+  padding: 5px 0;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer; }
+  .hobby-item .hobby-item__control {
+    background-image: url("../img/add.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    width: 12px;
+    height: 12px;
+    padding: 3px;
+    position: absolute;
+    top: 5px;
+    left: 0; }
+  .hobby-item .hobby-item__text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    min-width: 400px;
+    max-width: 100%; }
+    .hobby-item .hobby-item__text .text {
+      margin-right: 10px; }
+    .hobby-item .hobby-item__text:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 30px;
+      width: 50px;
+      background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0.5)); }
+  .hobby-item:hover .hobby-item__control {
+    display: inline-block; }
+  .hobby-item:hover .claim {
+    display: inline-block; }
+  .hobby-item .claim {
+    display: none;
+    position: absolute;
+    right: 0;
+    vertical-align: middle;
+    padding-left: 20px; }
+    .hobby-item .claim::before {
+      background-image: url("../img/warn.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+      content: '';
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+      margin-right: 5px; }
+  .hobby-item .added {
+    color: green;
+    vertical-align: middle;
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 50px; }
+    .hobby-item .added::before {
+      background-image: url("../img/ok.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 5px; }

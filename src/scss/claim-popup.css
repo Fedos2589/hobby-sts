@@ -1,0 +1,24 @@
+.claim-form {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid black;
+  z-index: 10; }
+  .claim-form .form-title {
+    text-align: center; }
+  .claim-form .popup-close {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/close.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer; }
