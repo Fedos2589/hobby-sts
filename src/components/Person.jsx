@@ -6,14 +6,14 @@ import HobbiesList from './HobbiesList'
 
 
 class Person extends Component {
-	constructor(props) {
-		super(props)
+  constructor(props) {
+    super(props)
 
-		this.state = {
-			shortList: true,
+    this.state = {
+      shortList: true,
       popup: false
-		}
-	}
+    }
+  }
 
   formatInterests = (value) => {
     switch(value) {
@@ -38,31 +38,31 @@ class Person extends Component {
   showMoreHobbies = () => this.setState({ shortList: false })
 
   render() {
-  	let { title, editable, personId, addHobby, controlClick, showPopup } = this.props
+    let { title, editable, personId, addHobby, controlClick, showPopup } = this.props
 
     return (
       <div className="person">
-      	<h2 className="person-title">{PERSON_TITLES[personId]}</h2>
-      	<div className="person-subtitle">
-      		<span className="person-subtitle__text">Хобби</span>
-      		<span className="person-subtitle__line" />
-      	</div>
-      	<div className="hobbies-list-wrapper">
-	      	<div
-	      		className={
-	      			classNames({
-	      				"input-wrapper": true,
-	      				"hide": !editable
-	      			})
-	      		}
-	      	>
-		      	<input
-		      		placeholder='Введите текст'
-		      		className='new-hobby'
+        <h2 className="person-title">{PERSON_TITLES[personId]}</h2>
+        <div className="person-subtitle">
+          <span className="person-subtitle__text">Хобби</span>
+          <span className="person-subtitle__line" />
+        </div>
+        <div className="hobbies-list-wrapper">
+          <div
+            className={
+              classNames({
+                "input-wrapper": true,
+                "hide": !editable
+              })
+            }
+          >
+            <input
+              placeholder='Введите текст'
+              className='new-hobby'
               onKeyPress={(e) => addHobby(e, personId)}
-		      	/>
-		      </div>
-		      <HobbiesList
+            />
+          </div>
+          <HobbiesList
             list={this.getHobbiesList()}
             personId={personId}
             controlClick={controlClick}
@@ -79,7 +79,7 @@ class Person extends Component {
           >
             {`еще ${this.countAdditionalHobbies()} ${this.formatInterests(this.countAdditionalHobbies())}`}
           </a>
-		     </div>
+         </div>
       </div>
     );
   }
