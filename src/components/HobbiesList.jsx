@@ -16,4 +16,4 @@ const HobbiesList = ({ list, personId, controlClick, showPopup }) =>
     )}
   </div>
 
-export default HobbiesList;
+export default HobbiesList

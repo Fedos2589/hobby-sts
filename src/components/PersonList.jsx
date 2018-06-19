@@ -7,7 +7,6 @@ class PersonList extends Component {
     super(props)
 
     this.state = this.initialState()
-   
   }
 
   initialState = () => {
@@ -35,6 +34,7 @@ class PersonList extends Component {
   addHobby = (event, id) => {
     if (event.key === 'Enter' && id === 'me') {
       this.setState({ me: this.state.me.concat(event.target.value) })
+      event.target.value = ''
     }
   }
 
@@ -55,8 +55,8 @@ class PersonList extends Component {
           />
         )}
       </div>
-    );
+    )
   }
 }
 
-export default PersonList;
+export default PersonList

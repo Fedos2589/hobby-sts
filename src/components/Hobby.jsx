@@ -11,7 +11,6 @@ class Hobby extends Component {
   }
 
   handleClick = (personId, value) => {
-    console.log(this)
     this.props.controlClick(personId, value)
     if (personId !== 'me') this.setState({ added: true })
   }
@@ -46,4 +45,4 @@ class Hobby extends Component {
 }
   
 
-export default Hobby;
+export default Hobby

@@ -14,4 +14,4 @@ const ClaimForm = ({ show, hidePopup }) =>
     <span className="popup-close" onClick={hidePopup} />
   </div>
 
-export default ClaimForm;
+export default ClaimForm
