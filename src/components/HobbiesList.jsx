@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Hobby from './Hobby'
 
 const HobbiesList = ({ list, personId, controlClick, showPopup }) =>

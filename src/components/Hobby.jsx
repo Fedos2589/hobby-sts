@@ -16,7 +16,7 @@ class Hobby extends Component {
   }
 
   render() {
-    let { personId, hobbyId, value, controlClick, showPopup } = this.props
+    let { personId, hobbyId, value, showPopup } = this.props
 
     return (
       <div className="hobby-item" key={hobbyId}>

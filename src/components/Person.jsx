@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import keyIndex from 'react-key-index'
+import randomKey from '../utils/randomKey'
 import { PERSON_TITLES } from '../initial'
 import HobbiesList from './HobbiesList'
 
@@ -32,13 +32,13 @@ class Person extends Component {
 
   getHobbiesList = () => {
     let hobbiesList = this.state.shortList ? this.props.hobbies.slice(0, 2) : this.props.hobbies
-    return keyIndex(hobbiesList, 1)
+    return randomKey(hobbiesList, 1)
   }
 
   showMoreHobbies = () => this.setState({ shortList: false })
 
   render() {
-    let { title, editable, personId, addHobby, controlClick, showPopup } = this.props
+    let { editable, personId, addHobby, controlClick, showPopup } = this.props
 
     return (
       <div className="person">
