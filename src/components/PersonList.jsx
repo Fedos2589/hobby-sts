@@ -21,15 +21,12 @@ class PersonList extends Component {
   }
 
   addSomebodysHobby = (hobby) =>
-    this.state.me.indexOf(hobby) === -1 ? this.setState({ me: this.state.me.concat(hobby) }) : ''
+    !this.state.me.includes(hobby) && this.setState({ me: this.state.me.concat(hobby) })
 
-  controlClick = (personId, hobby) => {
-    if (personId === 'me') {
-      this.deleteHobby(personId, hobby)
-    } else {
-      this.addSomebodysHobby(hobby)
-    }
-  }
+  controlClick = (personId, hobby) =>
+    personId === 'me'
+      ? this.deleteHobby(personId, hobby)
+      : this.addSomebodysHobby(hobby)
 
   addHobby = (event, id) => {
     if (event.key === 'Enter' && id === 'me') {
@@ -43,7 +40,7 @@ class PersonList extends Component {
   render() {
     return (
       <div className="person-list-container">
-        {this.getPersonIds().map((id) =>
+        {this.getPersonIds().map(id =>
           <Person
             editable={id === 'me'}
             personId={id}

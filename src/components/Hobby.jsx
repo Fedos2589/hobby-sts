@@ -41,7 +41,6 @@ class Hobby extends Component {
       </div>
     )
   }
-  
 }
   
 

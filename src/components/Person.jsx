@@ -4,6 +4,8 @@ import randomKey from '../utils/randomKey'
 import { PERSON_TITLES } from '../initial'
 import HobbiesList from './HobbiesList'
 
+const HOBBIES_AMOUNT_DEFAULT = 2
+
 
 class Person extends Component {
   constructor(props) {
@@ -28,10 +30,11 @@ class Person extends Component {
     }
   }
 
-  countAdditionalHobbies = () => this.props.hobbies.length - 2
+  countAdditionalHobbies = () => this.props.hobbies.length - HOBBIES_AMOUNT_DEFAULT
 
   getHobbiesList = () => {
-    let hobbiesList = this.state.shortList ? this.props.hobbies.slice(0, 2) : this.props.hobbies
+    let hobbiesList = this.state.shortList ? this.props.hobbies.slice(0, HOBBIES_AMOUNT_DEFAULT) : this.props.hobbies
+
     return randomKey(hobbiesList, 1)
   }
 
@@ -81,7 +84,7 @@ class Person extends Component {
           </a>
          </div>
       </div>
-    );
+    )
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../scss/App.css';
+import '../scss/App.css'
 import PersonList from './PersonList'
 import ClaimForm from './ClaimForm'
 
@@ -22,7 +22,7 @@ class App extends Component {
         <PersonList showPopup={this.showPopup} />
         <ClaimForm show={this.state.popup} hidePopup={this.hidePopup} />
       </div>
-    );
+    )
   }
 }
 
